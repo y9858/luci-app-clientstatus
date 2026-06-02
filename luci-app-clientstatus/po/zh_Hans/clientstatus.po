@@ -105,6 +105,9 @@ msgstr "联网控制"
 msgid "SPEED"
 msgstr "实时网速"
 
+msgid "Click to edit"
+msgstr "点击进行编辑"
+
 msgid "Click to toggle"
 msgstr "点击进行修改"
 
