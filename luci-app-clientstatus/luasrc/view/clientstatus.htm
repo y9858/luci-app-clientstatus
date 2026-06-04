@@ -582,7 +582,7 @@
   function toggleAcl(mac, el) {
     if (el.classList.contains('loading')) return;
     el.classList.add('loading');
-    csPost('<%=url("admin/services/clientstatus/toggle_acl")%>', { mac: mac }, function(resp) {
+    csPost('<%=url("admin/status/clientstatus/toggle_acl")%>', { mac: mac }, function(resp) {
       el.classList.remove('loading');
       if (resp && resp.ok) {
         showToast(resp.blocked ? mac + ' → <%:Blocked%>' : mac + ' → <%:Allowed%>', 'success');
@@ -594,7 +594,7 @@
   }
 
   function saveHostname(mac, hostname, callback) {
-    csPost('<%=url("admin/services/clientstatus/save_hostname")%>', {
+    csPost('<%=url("admin/status/clientstatus/save_hostname")%>', {
       mac: mac,
       hostname: hostname
     }, function(resp) {
@@ -726,7 +726,7 @@
   function csFetch() {
     var btn = document.getElementById('cs-refresh');
     btn.classList.add('loading');
-    XHR.get('<%=url("admin/services/clientstatus/data")%>', null, function(x, data) {
+    XHR.get('<%=url("admin/status/clientstatus/data")%>', null, function(x, data) {
       btn.classList.remove('loading');
       if (data) {
         allClients = data.clients || [];
@@ -737,7 +737,7 @@
   window.csFetch = csFetch;
 
   function csSpeed() {
-    XHR.get('<%=url("admin/services/clientstatus/speed")%>?_=' + Date.now(), null, function(x, data) {
+    XHR.get('<%=url("admin/status/clientstatus/speed")%>?_=' + Date.now(), null, function(x, data) {
       if (data && data.clients) {
         speedData = data.clients;
         if (allClients.length > 0) renderSpeed();
@@ -749,7 +749,7 @@
     var btn = document.getElementById('cs-reset');
     if (btn.classList.contains('loading')) return;
     btn.classList.add('loading');
-    csPost('<%=url("admin/services/clientstatus/reset")%>', {}, function(resp) {
+    csPost('<%=url("admin/status/clientstatus/reset")%>', {}, function(resp) {
       btn.classList.remove('loading');
       if (resp && resp.ok) {
         showToast('<%:Client data cleared%>', 'success');
@@ -763,7 +763,7 @@
   window.csReset = csReset;
 
   function csCheck() {
-    XHR.get('<%=url("admin/services/clientstatus/mtime")%>?_=' + Date.now(), null, function(x, data) {
+    XHR.get('<%=url("admin/status/clientstatus/mtime")%>?_=' + Date.now(), null, function(x, data) {
       if (data && typeof data.mtime !== 'undefined') {
         if (lastMtime === -1 || data.mtime !== lastMtime) {
           lastMtime = data.mtime;
