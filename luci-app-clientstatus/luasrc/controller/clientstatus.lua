@@ -5,34 +5,34 @@ function index()
 		return
 	end
 
-	entry({"admin", "services", "clientstatus"},
+	entry({"admin", "status", "clientstatus"},
 	      call("action_main"),
 	      _("Client Management"), 60)
 
-	entry({"admin", "services", "clientstatus", "status"},
+	entry({"admin", "status", "clientstatus", "status"},
 	      template("clientstatus"),
 	      _("Status"), 1)
 
-	entry({"admin", "services", "clientstatus", "settings"},
+	entry({"admin", "status", "clientstatus", "settings"},
 	      cbi("clientstatus/settings"),
 	      _("Settings"), 2)
 
-	entry({"admin", "services", "clientstatus", "data"},
+	entry({"admin", "status", "clientstatus", "data"},
 	      call("action_data"), nil).leaf = true
 
-	entry({"admin", "services", "clientstatus", "mtime"},
+	entry({"admin", "status", "clientstatus", "mtime"},
 	      call("action_mtime"), nil)
 
-	entry({"admin", "services", "clientstatus", "speed"},
+	entry({"admin", "status", "clientstatus", "speed"},
 	      call("action_speed"), nil)
 
-	entry({"admin", "services", "clientstatus", "toggle_acl"},
+	entry({"admin", "status", "clientstatus", "toggle_acl"},
 	      call("action_toggle_acl"), nil).leaf = true
 
-	entry({"admin", "services", "clientstatus", "save_hostname"},
+	entry({"admin", "status", "clientstatus", "save_hostname"},
 	      call("action_save_hostname"), nil).leaf = true
 
-	entry({"admin", "services", "clientstatus", "reset"},
+	entry({"admin", "status", "clientstatus", "reset"},
 	      call("action_reset"), nil)
 end
 
@@ -43,7 +43,7 @@ function action_main()
 		luci.template.render("clientstatus")
 	else
 		luci.http.redirect(
-			luci.dispatcher.build_url("admin/services/clientstatus/settings"))
+			luci.dispatcher.build_url("admin/status/clientstatus/settings"))
 	end
 end
 
