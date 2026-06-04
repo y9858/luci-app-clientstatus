@@ -10,7 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Client Management"
-msgstr "客户端管理"
+msgstr "终端管理"
 
 msgid "Status"
 msgstr "状态"
@@ -19,7 +19,7 @@ msgid "Settings"
 msgstr "设置"
 
 msgid "Client Management Settings"
-msgstr "客户端管理设置"
+msgstr "终端管理设置"
 
 msgid "Note: Restart the service if the page does not display correctly after changing network settings."
 msgstr "如果设置网络后显示不正常，请重启服务。"
@@ -46,7 +46,7 @@ msgid "Network interface to scan for clients. Usually br-lan."
 msgstr "扫描客户端的网络接口。通常为br-lan。"
 
 msgid "Total Devices"
-msgstr "设备总数"
+msgstr "终端"
 
 msgid "Online"
 msgstr "在线"
@@ -55,10 +55,10 @@ msgid "Offline"
 msgstr "离线"
 
 msgid "Allowed"
-msgstr "允许联网"
+msgstr "允许"
 
 msgid "Blocked"
-msgstr "禁止联网"
+msgstr "禁止"
 
 msgid "Ethernet"
 msgstr "有线"
@@ -94,7 +94,7 @@ msgid "IP"
 msgstr "IP地址"
 
 msgid "Duration"
-msgstr "持续时间"
+msgstr "在线时长"
 
 msgid "NCT"
 msgstr "连接类型"
